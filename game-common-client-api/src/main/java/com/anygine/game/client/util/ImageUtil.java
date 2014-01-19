@@ -24,7 +24,7 @@ public final class ImageUtil {
 			AlignmentX alignX, AlignmentY alignY) {
 		CanvasImage canvasImage = graphics().createImage(sizeX, sizeY);
 		Canvas canvas = canvasImage.canvas();
-		canvas.drawImage(PlayN.assets().getImageSync("Overlays/empty.png"), 0.0f, 0.0f);
+		canvas.drawImage(PlayN.assets().getImage("Overlays/empty.png"), 0.0f, 0.0f);
 		font.renderText(
 				canvas, text, 0.0f, 0.0f, alignX, alignY);
 		if (image != null) {

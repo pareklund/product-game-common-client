@@ -2,12 +2,12 @@ package com.anygine.game.client;
 
 import java.util.Collection;
 
+import com.anygine.common.exception.AnygineException;
 import playn.core.Json;
 import playn.core.PlayN;
 import playn.core.util.Callback;
 
 import com.anygine.core.common.client.AnygineCallback;
-import com.anygine.core.common.client.AnygineException;
 import com.anygine.core.common.client.AnygineException_Embeddable;
 import com.anygine.core.common.client.Profile;
 import com.anygine.core.common.client.api.UniqueConstraintViolationException;

@@ -24,7 +24,7 @@ public class MessageView extends TextView {
       AlignmentY alignmentY, String text, final Overlay overlayAfterMsg) {
     super(id, width, height, alignmentX, alignmentY, text);
     // TODO: Remove hard coding
-    okButton = PlayN.assets().getImageSync("Icons/Button_Smaller.png");
+    okButton = PlayN.assets().getImage("Icons/Button_Smaller.png");
     setClickListener(new ClickListener() {
       
       @Override

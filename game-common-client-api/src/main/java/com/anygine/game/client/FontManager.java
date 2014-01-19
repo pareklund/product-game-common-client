@@ -12,7 +12,7 @@ public class FontManager {
 	private final BitmapFont font;
 	
 	public FontManager() {
-		font = new BitmapFont(PlayN.assets().getImageSync("Fonts/Peric.png"), 24.0f, 24.0f);
+		font = new BitmapFont(PlayN.assets().getImage("Fonts/Peric.png"), 24.0f, 24.0f);
 	}
 	
 	public BitmapFont getFont() {

@@ -1,21 +1,14 @@
 package com.anygine.game.client.render;
 
-import static playn.core.PlayN.graphics;
+import com.anygine.core.common.client.domain.GameComponent;
+import com.anygine.core.common.client.domain.Level;
+import com.anygine.core.common.client.domain.Tile;
+import com.anygine.core.common.client.geometry.Vector2;
+import playn.core.*;
 
 import java.util.List;
 
-import playn.core.Canvas;
-import playn.core.CanvasImage;
-import playn.core.Image;
-import playn.core.PlayN;
-import playn.core.Surface;
-
-import com.anygine.core.common.client.domain.GameComponent;
-import com.anygine.core.common.client.domain.GameComponentState;
-import com.anygine.core.common.client.domain.Level;
-import com.anygine.core.common.client.domain.Player;
-import com.anygine.core.common.client.domain.Tile;
-import com.anygine.core.common.client.geometry.Vector2;
+import static playn.core.PlayN.graphics;
 
 public class RenderHelper {
 	
@@ -29,9 +22,9 @@ public class RenderHelper {
 		surface.drawImage(textImage, position.X - 15.0f, position.Y - 85.0f);	
 	}
 	
-	public static boolean isOnScreen(GameComponent<?, ?, ?, ?> gameComponent) {
+	public static boolean isOnScreen(GameComponent<?, ?> gameComponent) {
 
-		Level<?, ?, ?, ?> level = gameComponent.getLevel();
+		Level<?, ?> level = gameComponent.getLevel();
 		float screenWidth = graphics().width();
 		float cameraPositionX = level.getCameraPosition().X;
 		float marginLeft = cameraPositionX;
@@ -50,13 +43,11 @@ public class RenderHelper {
 	}
 
 	public static 
-	  <S extends GameComponentState, 
-	  P extends Player<?, ?, ?, ?>, 
-	  L extends Level<?, ?, ?, ?>, 
-	  GC extends GameComponent<?, ?, ?, ?>> 
+	  <L extends Level<?, ?>,
+	  GC extends GameComponent<?, ?>>
 	  void renderGameComponents(
 			List<? extends GC> gameComponents,
-			GameComponentRenderer<S, P, L, GC> renderer,
+			GameComponentRenderer<L, GC> renderer,
 			L level, float gameTime, Surface surface) {
 		int renderCount = 0;
 		for (GC gameComponent : gameComponents) {
@@ -86,7 +77,7 @@ public class RenderHelper {
 	// TODO: Implement more efficiently (e.g. cache per frame)
 	//       E.g. implement a FrameListener framework where classes can
 	//       register for event onNewFrame()
-	public static Vector2 getTopOfScreen(Level<?, ?, ?, ?> level) {
+	public static Vector2 getTopOfScreen(Level<?, ?> level) {
 		float screenWidth = graphics().width();
 		float cameraPositionX = level.getCameraPosition().X;
 		float marginLeft = cameraPositionX;

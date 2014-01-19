@@ -169,7 +169,7 @@ public class LayoutManager {
     Image image = null;
     String imagePath = jso.getString("image");
     if (imagePath != null) {
-      image = PlayN.assets().getImageSync(imagePath);
+      image = PlayN.assets().getImage(imagePath);
     }
     ImageView imageView = new ImageView(
         id, width, height, alignmentX, alignmentY, image);
@@ -184,7 +184,7 @@ public class LayoutManager {
     String text = jso.getString("text");
     String imagePath = jso.getString("image");
     if (imagePath != null) {
-      image = PlayN.assets().getImageSync(imagePath);
+      image = PlayN.assets().getImage(imagePath);
     }
     Button button = new Button(
         id, width, height, alignmentX, alignmentY, text, image);
